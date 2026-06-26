@@ -1,0 +1,18 @@
+#!/bin/sh
+cat > .env <<'EOF'
+name=
+email=
+phone=
+github=
+linkedin=
+education_details=
+project_pass_export_url=
+project_automata_url=
+project_rule_explorer_url=
+project_tagger_url=
+project_md_parser_url=
+project_apk_scraper_url=
+project_graph_viz_url=
+project_this_cv_url=
+EOF
+echo ".env created — fill in the values and run make"

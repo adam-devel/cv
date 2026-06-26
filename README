@@ -2,4 +2,6 @@ this is my cv. it's a template with env vars that get substituted with envsubst 
 
 dependencies: envsubst (gettext), weasyprint, make
 
+run `utils/env_init` to generate an empty .env with all the variables the templates expect.
+
 html is used instead of markdown for the flexibility needed for a cv layout.
