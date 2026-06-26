@@ -1,13 +1,13 @@
-all: cv.en.pdf cv.fr.pdf
+all: build/cv.en.pdf build/cv.fr.pdf
 
-cv.en.html: cv.template.en.html .env
-	. ./.env && envsubst < cv.template.en.html > cv.en.html
+build/cv.en.html: cv.template.en.html .env
+	mkdir -p build && . ./.env && envsubst < cv.template.en.html > build/cv.en.html
 
-cv.fr.html: cv.template.fr.html .env
-	. ./.env && envsubst < cv.template.fr.html > cv.fr.html
+build/cv.fr.html: cv.template.fr.html .env
+	mkdir -p build && . ./.env && envsubst < cv.template.fr.html > build/cv.fr.html
 
-cv.en.pdf: cv.en.html
-	weasyprint cv.en.html cv.en.pdf
+build/cv.en.pdf: build/cv.en.html
+	weasyprint build/cv.en.html build/cv.en.pdf
 
-cv.fr.pdf: cv.fr.html
-	weasyprint cv.fr.html cv.fr.pdf
+build/cv.fr.pdf: build/cv.fr.html
+	weasyprint build/cv.fr.html build/cv.fr.pdf
