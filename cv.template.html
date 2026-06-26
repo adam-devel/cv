@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>${name}'s CV</title>
+	<style>
+		:root {
+			--text: #1a1a1a;
+			--muted: #555;
+			--accent: #1a3a5c;
+			--rule: #bbb;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			color: var(--text);
+			padding: 2rem 1.5rem;
+			max-width: 800px;
+			margin: 0 auto;
+			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			font-size: 0.95rem;
+			line-height: 1.5;
+		}
+
+		header {
+			margin-bottom: 1.5rem;
+		}
+
+		h1 {
+			font-size: 2rem;
+			font-weight: 700;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: var(--accent);
+			margin-bottom: 0.3rem;
+		}
+
+		address {
+			font-style: normal;
+			font-size: 0.85rem;
+			color: var(--muted);
+			line-height: 1.7;
+		}
+
+		h2 {
+			font-size: 1rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+			color: var(--accent);
+			border-bottom: 1px solid var(--rule);
+			padding-bottom: 0.25rem;
+			margin-top: 1.5rem;
+			margin-bottom: 0.6rem;
+		}
+
+		p {
+			margin-bottom: 0.5rem;
+		}
+
+		ul {
+			padding-left: 1.2rem;
+			margin-bottom: 0.6rem;
+		}
+
+		li {
+			margin-bottom: 0.15rem;
+		}
+
+		.section {
+			margin-bottom: 1rem;
+		}
+
+		.section {
+			break-inside: avoid;
+		}
+
+		p,
+		li {
+			orphans: 3;
+			widows: 3;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>${name}</h1>
+		<address>
+			Email: ${email}<br>
+			Phone: ${phone}<br>
+			Source Code: ${github}<br>
+			LinkedIn: ${linkedin}
+		</address>
+	</header>
+
+	<main>
+		<section>
+			<p>Computer science student with experience in web development, Bash, C, and Linux systems, gained through years of hands-on projects, participating in hackathons and team projects, and daily-driving a DIY Linux distro.</p>
+		</section>
+
+		<section>
+			<h2>Education</h2>
+			<p>
+				<strong>${education_details}</strong>: courses include Data Structures, Algorithms, Compiler Design, Search Engines and Indexing, Java, Advanced Python
+			</p>
+			<p>
+				<strong>Self Study:</strong> Started with full-stack web development (TypeScript, React, JavaScript Web APIs), later shifted to lower-level systems programming in C, operating Linux systems and using Bash
+			</p>
+		</section>
+
+		<section>
+			<h2>Skills</h2>
+			<ul>
+				<li><strong>Programming Languages:</strong> JavaScript / TypeScript, Bash, C, Go, Python</li>
+				<li><strong>Frameworks &amp; Tools:</strong> Node.js, React, Make, Git</li>
+				<li><strong>Platforms &amp; Systems:</strong> Linux</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Projects</h2>
+
+			<article class="section">
+				<p><strong>Cellular Automata Simulator</strong> &mdash; <em>${project_automata_url}</em></p>
+				<ul>
+					<li>Built a 2D cellular automata simulator in C</li>
+					<li>Designed a highly modular API:
+						<ul>
+							<li>Swappable rulesets: game of life, serviettes, mazectric, etc..</li>
+							<li>Swappable graphics backends: glfw, sdl</li>
+						</ul>
+					</li>
+					<li>Designed a build system with module auto-discovery &amp; implemented double buffering and ping-pong buffer sawpping</li>
+				</ul>
+			</article>
+
+			<article class="section">
+				<p><strong>Rule Space Explorer for 2D Cellular Automata</strong> &mdash; <em>${project_rule_explorer_url}</em></p>
+				<ul>
+					<li>Built an interactive explorer for the space of all possible rulesets for a 3&times;3 neighbourhood</li>
+					<li>Designed an advanced GUI with entropy measure and editable ruleset views</li>
+					<li>Optimized the project for real-time experimentation</li>
+					<li>Plugs into my other project simulator project via the exposed rulesets API</li>
+				</ul>
+			</article>
+
+			<article class="section">
+				<p><strong>File Tagging System</strong> &mdash; <em>${project_tagger_url}</em></p>
+				<ul>
+					<li>Developed a CLI tool for tagging files using hash-based deduplication and symlinks</li>
+					<li>Ensured safe reversibility to restore original files from the tag structure</li>
+					<li>Originally written in Bash, later migrated to Go for improved performance and maintainability</li>
+				</ul>
+			</article>
+
+			<article class="section">
+				<p><strong>Bitwarden-compatible Password Exporter in Bash</strong> &mdash; <em>${project_pass_export_url}</em></p>
+				<ul>
+					<li>Wrote a program to export passwords from <code>pass</code> to a Bitwarden-compatible JSON format</li>
+					<li>Kept the code minimal, editable, and extensible for easy customization</li>
+				</ul>
+			</article>
+
+			<article class="section">
+				<p><strong>Personal Knowledge Base / Website Generator</strong> &mdash; <em>${project_md_parser_url}</em></p>
+				<ul>
+					<li>Built a zero-dependency static site generator in C for hosting personal notes and wikis</li>
+					<li>Designed a hand-written custom markup parser, exploring language theory and grammar design</li>
+				</ul>
+			</article>
+
+			<article class="section">
+				<p><strong>APKMirror Scraper in Node.js</strong> &mdash; <em>${project_apk_scraper_url}</em></p>
+				<ul>
+					<li>Built a web scraper using DOM parsing to automate APK file downloads from APKMirror</li>
+				</ul>
+			</article>
+
+			<article class="section">
+				<p><strong>Graph Traversal Visualizer</strong> &mdash; <em>${project_graph_viz_url}</em></p>
+				<ul>
+					<li>Implemented a space-colonization algorithm to render a graph and its branches on a grid</li>
+					<li>Allows users to see BFS and DFS traversals with real-time visualization</li>
+					<li>Designed as a pedagogical tool for understanding graph search algorithms</li>
+				</ul>
+			</article>
+
+			<article class="section">
+				<p><strong>this very cv!</strong> &mdash; <em>${project_this_cv_url}</em></p>
+				<ul>
+					<li>Created a CV using envsubst for variable substitution, demonstrating automation and text processing skills</li>
+				</ul>
+			</article>
+		</section>
+	</main>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CV de ${name}</title>
+	<style>
+		:root {
+			--text: #1a1a1a;
+			--muted: #555;
+			--accent: #1a3a5c;
+			--rule: #bbb;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			color: var(--text);
+			padding: 2rem 1.5rem;
+			max-width: 800px;
+			margin: 0 auto;
+			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			font-size: 0.95rem;
+			line-height: 1.5;
+		}
+
+		header {
+			margin-bottom: 1.5rem;
+		}
+
+		h1 {
+			font-size: 2rem;
+			font-weight: 700;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: var(--accent);
+			margin-bottom: 0.3rem;
+		}
+
+		address {
+			font-style: normal;
+			font-size: 0.85rem;
+			color: var(--muted);
+			line-height: 1.7;
+		}
+
+		h2 {
+			font-size: 1rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+			color: var(--accent);
+			border-bottom: 1px solid var(--rule);
+			padding-bottom: 0.25rem;
+			margin-top: 1.5rem;
+			margin-bottom: 0.6rem;
+		}
+
+		p {
+			margin-bottom: 0.5rem;
+		}
+
+		ul {
+			padding-left: 1.2rem;
+			margin-bottom: 0.6rem;
+		}
+
+		li {
+			margin-bottom: 0.15rem;
+		}
+
+		.section {
+			margin-bottom: 1rem;
+		}
+
+		.section {
+			break-inside: avoid;
+		}
+
+		p,
+		li {
+			orphans: 3;
+			widows: 3;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>${name}</h1>
+		<address>
+			Courriel : ${email}<br>
+			Tél. : ${phone}<br>
+			Code source : ${github}<br>
+			LinkedIn : ${linkedin}
+		</address>
+	</header>
+
+	<main>
+		<section>
+			<p>Étudiant en informatique avec de l'expérience en développement web, Bash, C et systèmes Linux, acquise grâce à des années de projets pratiques, de participations à des hackathons et de projets d'équipe, ainsi qu'en utilisant quotidiennement une distribution Linux maison.</p>
+		</section>
+
+		<section>
+			<h2>Formation</h2>
+			<p>
+				<strong>${education_details}</strong> : cours suivis notamment Structures de données, Algorithmes, Conception de compilateurs, Moteurs de recherche et indexation, Java, Python avancé
+			</p>
+			<p>
+				<strong>Auto-apprentissage :</strong> commencé par le développement web full-stack (TypeScript, React, API web JavaScript), puis orienté vers la programmation système bas niveau en C, l'administration de systèmes Linux et l'utilisation de Bash
+			</p>
+		</section>
+
+		<section>
+			<h2>Compétences</h2>
+			<ul>
+				<li><strong>Langages de programmation :</strong> JavaScript / TypeScript, Bash, C, Go, Python</li>
+				<li><strong>Frameworks &amp; Outils :</strong> Node.js, React, Make, Git</li>
+				<li><strong>Plateformes &amp; Systèmes :</strong> Linux</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Projets</h2>
+
+			<article class="section">
+				<p><strong>Simulateur d'automates cellulaires</strong> &mdash; <em>${project_automata_url}</em></p>
+				<ul>
+					<li>Construit un simulateur d'automates cellulaires 2D en C</li>
+					<li>Conçu une API hautement modulaire :
+						<ul>
+							<li>Ensembles de règles interchangeables : jeu de la vie, serviettes, mazectric, etc.</li>
+							<li>Moteurs graphiques interchangeables : glfw, sdl</li>
+						</ul>
+					</li>
+					<li>Conçu un système de construction avec auto-découverte de modules et implémenté le double tampon et l'échange ping-pong</li>
+				</ul>
+			</article>
+
+			<article class="section">
+				<p><strong>Explorateur d'espace de règles pour automates cellulaires 2D</strong> &mdash; <em>${project_rule_explorer_url}</em></p>
+				<ul>
+					<li>Construit un explorateur interactif de l'espace de tous les ensembles de règles possibles pour un voisinage 3&times;3</li>
+					<li>Conçu une interface graphique avancée avec mesure d'entropie et vues d'ensembles de règles modifiables</li>
+					<li>Optimisé le projet pour l'expérimentation en temps réel</li>
+					<li>S'intègre à mon autre projet de simulateur via l'API d'ensembles de règles exposée</li>
+				</ul>
+			</article>
+
+			<article class="section">
+				<p><strong>Système d'étiquetage de fichiers</strong> &mdash; <em>${project_tagger_url}</em></p>
+				<ul>
+					<li>Développé un outil en ligne de commande pour étiqueter des fichiers avec déduplication par hachage et liens symboliques</li>
+					<li>Assuré une réversibilité sécurisée pour restaurer les fichiers d'origine à partir de la structure d'étiquettes</li>
+					<li>Écrit à l'origine en Bash, puis migré vers Go pour de meilleures performances et maintenabilité</li>
+				</ul>
+			</article>
+
+			<article class="section">
+				<p><strong>Exportateur de mots de passe compatible Bitwarden en Bash</strong> &mdash; <em>${project_pass_export_url}</em></p>
+				<ul>
+					<li>Écrit un programme pour exporter les mots de passe de <code>pass</code> vers un format JSON compatible Bitwarden</li>
+					<li>Gardé le code minimal, modifiable et extensible pour une personnalisation facile</li>
+				</ul>
+			</article>
+
+			<article class="section">
+				<p><strong>Générateur de site web / base de connaissances personnelle</strong> &mdash; <em>${project_md_parser_url}</em></p>
+				<ul>
+					<li>Construit un générateur de site statique sans dépendance en C pour héberger des notes et wikis personnels</li>
+					<li>Conçu un analyseur syntaxique personnalisé écrit à la main, explorant la théorie des langages et la conception de grammaires</li>
+				</ul>
+			</article>
+
+			<article class="section">
+				<p><strong>Scraper APKMirror en Node.js</strong> &mdash; <em>${project_apk_scraper_url}</em></p>
+				<ul>
+					<li>Construit un scraper web utilisant l'analyse DOM pour automatiser les téléchargements de fichiers APK depuis APKMirror</li>
+				</ul>
+			</article>
+
+			<article class="section">
+				<p><strong>Visualiseur de parcours de graphes</strong> &mdash; <em>${project_graph_viz_url}</em></p>
+				<ul>
+					<li>Implémenté un algorithme de colonisation d'espace pour rendre un graphe et ses branches sur une grille</li>
+					<li>Permet aux utilisateurs de voir les parcours BFS et DFS avec visualisation en temps réel</li>
+					<li>Conçu comme un outil pédagogique pour comprendre les algorithmes de recherche dans les graphes</li>
+				</ul>
+			</article>
+
+			<article class="section">
+				<p><strong>this very cv!</strong> &mdash; <em>${project_this_cv_url}</em></p>
+				<ul>
+					<li>Créé un CV utilisant envsubst pour la substitution de variables, démontrant des compétences en automatisation et en traitement de texte</li>
+				</ul>
+			</article>
+		</section>
+	</main>
+</body>
+</html>
