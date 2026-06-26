@@ -1,0 +1,1 @@
+this is my cv. it's a template with env vars that get substituted with envsubst via make. there's an english and a french version. personal data lives in .env which is gitignored. run `make` to build.
